@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora iphone</title>
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icons/images.jpg">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div id="history" class="history"></div>
+            <div id="display" class="main-display">0</div>
+        </div>
+        <div class="buttons">
+            <button class="btn gray" onclick="clearDisplay()">AC</button>
+            <button class="btn gray" onclick="invert()">+-</button>
+            <button class="btn gray" onclick="percent()">%</button>
+            <button class="btn orange" onclick="setOperation('/')">÷</button>
+
+            <button class="btn dark" onclick="appendNumber(7)">7</button>
+            <button class="btn dark" onclick="appendNumber(8)">8</button>
+            <button class="btn dark" onclick="appendNumber(9)">9</button>
+            <button class="btn orange" onclick="setOperation('*')">x</button>
+
+            
+            <button class="btn dark" onclick="appendNumber(4)">4</button>
+            <button class="btn dark" onclick="appendNumber(5)">5</button>
+            <button class="btn dark" onclick="appendNumber(6)">6</button>
+            <button class="btn orange" onclick="setOperation('-')">-</button>
+
+            
+            <button class="btn dark" onclick="appendNumber(1)">1</button>
+            <button class="btn dark" onclick="appendNumber(2)">2</button>
+            <button class="btn dark" onclick="appendNumber(3)">3</button>
+            <button class="btn orange" onclick="setOperation('+')">+</button>
+
+            <button class="btn dark zero" onclick="appendNumber(0)">0</button>
+            <button class="btn dark" onclick="appendDot()">,</button>
+            <button class="btn orange" onclick="calculate()">=</button>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js");
+        }
+    </script>
+</body>
+</html>
